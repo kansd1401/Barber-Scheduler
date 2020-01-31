@@ -24,6 +24,13 @@ func main() {
 		panic(err)
 	}
 	defer db.Close()
+
+	err = db.Ping()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Successfully connected!")
 	// Set the router as the default one shipped with Gin
 	router := gin.Default()
 
