@@ -44,6 +44,29 @@ func Seed(db *gorm.DB) {
 	db.Create(&appointment4)
 	db.Create(&appointment5)
 	db.Create(&appointment6)
+
+	schedule := createHours(barber, "02-02-2020")
+	schedule1 := createHours(barber1, "04-02-2020")
+	schedule2 := createHours(barber3, "02-02-2020")
+	schedule3 := createHours(barber, "06-02-2020")
+	schedule4 := createHours(barber3, "06-02-2020")
+	schedule5 := createHours(barber2, "06-02-2020")
+	schedule6 := createHours(barber4, "08-02-2020")
+	schedule7 := createHours(barber5, "05-02-2020")
+	schedule8 := createHours(barber4, "07-02-2020")
+	schedule9 := createHours(barber5, "03-02-2020")
+
+	db.Create(&schedule)
+	db.Create(&schedule1)
+	db.Create(&schedule2)
+	db.Create(&schedule3)
+	db.Create(&schedule4)
+	db.Create(&schedule5)
+	db.Create(&schedule6)
+	db.Create(&schedule7)
+	db.Create(&schedule8)
+	db.Create(&schedule9)
+
 }
 
 func createUser(email, firstName, lastName string) schema.Users {
