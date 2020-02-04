@@ -8,28 +8,38 @@ import (
 func Router(db *gorm.DB) {
 	router := gin.Default()
 
-	// Get Vendors
+	//Users
 	router.GET("/users", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
-			"message": "/vendors",
+			"message": "/users",
 		})
 	})
 
-	router.GET("/vendors/:id", func(c *gin.Context) {
+	router.GET("/users/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
-			"message": "/vendors/" + id,
+			"message": "/users/" + id,
 		})
 	})
 
-	router.GET("/vendors/:id/addresses", func(c *gin.Context) {
+	router.POST("/users/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
-			"message": "/vendors/" + id + "/addresses",
+			"message": "/users/" + id,
 		})
 	})
+
+	router.POST("/users/:id/delete", func(c *gin.Context) {
+		id := c.Param("id")
+		c.JSON(200, gin.H{
+			"status":  "ya got got",
+			"message": "/users/" + id,
+		})
+	})
+
+	//router starting
 	router.Run(":8000")
 }
