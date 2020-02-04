@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 
 	"./routes"
-	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/lib/pq"
@@ -28,38 +26,5 @@ func main() {
 	defer db.Close()
 
 	fmt.Println("Successfully connected!")
-	// Set the router as the default one shipped with Gin
-	router := gin.Default()
-	routes.Router()
-	// Setup route group for the API
-	api := router.Group("/api")
-	{
-		api.GET("/", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{
-				"message": "pong",
-			})
-		})
-	}
-
-	api.GET("/jokes", JokeHandler)
-	api.POST("/jokes/like/:jokeID", LikeJoke)
-
-	// Start and run the server
-	router.Run(":8000")
-}
-
-// JokeHandler retrieves a list of available jokes
-func JokeHandler(c *gin.Context) {
-	c.Header("Content-Type", "application/json")
-	c.JSON(http.StatusOK, gin.H{
-		"message": "Jokes handler not implemented yet",
-	})
-}
-
-// LikeJoke increments the likes of a particular joke Item
-func LikeJoke(c *gin.Context) {
-	c.Header("Content-Type", "application/json")
-	c.JSON(http.StatusOK, gin.H{
-		"message": "LikeJoke handler not implemented yet",
-	})
+	routes.Router(db)
 }

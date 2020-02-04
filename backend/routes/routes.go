@@ -1,12 +1,15 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+)
 
-func Router() {
+func Router(db *gorm.DB) {
 	router := gin.Default()
 
 	// Get Vendors
-	router.GET("/vendors", func(c *gin.Context) {
+	router.GET("/users", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
 			"message": "/vendors",
@@ -28,4 +31,5 @@ func Router() {
 			"message": "/vendors/" + id + "/addresses",
 		})
 	})
+	router.Run(":8000")
 }
