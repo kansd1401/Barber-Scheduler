@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
+	"./routes"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/lib/pq"
 )
 
@@ -28,7 +30,7 @@ func main() {
 	fmt.Println("Successfully connected!")
 	// Set the router as the default one shipped with Gin
 	router := gin.Default()
-
+	routes.Router()
 	// Setup route group for the API
 	api := router.Group("/api")
 	{
