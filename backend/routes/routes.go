@@ -1,8 +1,6 @@
 package routes
 
 import (
-	"fmt"
-
 	"../db/schema"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
@@ -15,7 +13,6 @@ func Router(db *gorm.DB) {
 	router.GET("/users", func(c *gin.Context) {
 		var users []schema.Users
 		db.Find(&users)
-		fmt.Println(users)
 		c.JSON(200, gin.H{
 			"status": "ya got got",
 			"users":  users,
