@@ -5,14 +5,14 @@ import DayListItem from "./DayListItem";
 export default function DayList(props) {
 
   return (
-    <ul>
+    <div>
       {props.days.map((day) => <DayListItem
         key={day.id} 
         name={day.name} 
-        spots={day.spots} 
+        date={day.date} 
         selected={day.name === props.day}
         setDay={() => props.setDay(day.name)}
         />)}
-    </ul>
+    </div>
   );
 }

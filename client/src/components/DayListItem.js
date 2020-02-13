@@ -9,9 +9,9 @@ export default function DayListItem(props) {
   });
 
   return (
-    <div data-testid = "day" onClick={props.setDay} className={classes}>
+    <th data-testid = "day" onClick={props.setDay} className={classes}>
       <h3 className="text--regular">{props.name}</h3> 
       <h3 className="text--light">{props.date}</h3>
-    </div>
+    </th>
   );
 }

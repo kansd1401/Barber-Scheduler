@@ -6,6 +6,7 @@ import { action } from "@storybook/addon-actions";
 import "../index.scss";
 import Button from "../components/Button";
 import DayListItem from "../components/DayListItem";
+import DayList from "../components/DayList";
 
 
 
@@ -34,4 +35,48 @@ storiesOf("Button", module)
   .add("Full", () => <DayListItem name="MON" date={27} />)
   .add("Clickable", () => (
     <DayListItem name="TUE" setDay={action("setDay")} date={28} /> 
+  ));
+
+  const days = [
+    {
+      id: 1,
+      name: "MON",
+      date: 23,
+    },
+    {
+      id: 2,
+      name: "TUE",
+      date: 24,
+    },
+    {
+      id: 3,
+      name: "WED",
+      date: 25,
+    },
+    {
+      id: 3,
+      name: "THU",
+      date: 26,
+    },
+    {
+      id: 3,
+      name: "FRI",
+      date: 27,
+    },
+    {
+      id: 3,
+      name: "SAT",
+      date: 28,
+    },
+  ];
+  
+  storiesOf("DayList", module)
+  .addParameters({
+    backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
+  })
+  .add("MON", () => (
+    <DayList days={days} day={"MON"} setDay={action("setDay")} />
+  ))
+  .add("TUE", () => (
+    <DayList days={days} day={"TUE"} setDay={action("setDay")} />
   ));
