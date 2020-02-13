@@ -7,6 +7,7 @@ import "../index.scss";
 import Button from "../components/Button";
 import DayListItem from "../components/DayListItem";
 import DayList from "../components/DayList";
+import BarberListItem from "../components/BarberListItem"
 
 
 
@@ -80,3 +81,23 @@ storiesOf("Button", module)
   .add("TUE", () => (
     <DayList days={days} day={"TUE"} setDay={action("setDay")} />
   ));
+
+  const barber = {
+    id: 1,
+    firstName: "Sylvia",
+    lastName: "Palmer",
+    avatar: "https://i.imgur.com/LpaY82x.png"
+  };
+  
+storiesOf("BarberListItem", module)
+  .addParameters({
+    backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+  })
+  .add("Unselected", () => (
+    <BarberListItem
+      id={barber.id}
+      firstName={barber.firstName}
+      lastName={barber.lastName}
+      avatar={barber.avatar}
+    />
+  ))
