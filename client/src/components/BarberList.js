@@ -1,26 +1,19 @@
 import React from "react";
 import "./BarberList.scss";
-import "./BarberListItem"
+import BarberListItem from "./BarberListItem"
 
 export default function BarberList(props) {
-  BarberList.propTypes = {
-    barber: PropTypes.number,
-    setBarber: PropTypes.func.isRequired
-  };
 
   return (
     <ul>
       <section className="barbers">
-        <h4 className="barbers__header text--light">Barber</h4>
+        <h4 className="barbers__header text--light">Barbers</h4>
         <ul className="barbers__list">
-          {props.barbers.map((person) => <BarberListItem 
-            key={person.id}
+          {props.barbers.map((person) => <BarberListItem
             firstName={person.firstName}
             lastName={person.lastName}
             avatar={person.avatar}
-            id={person.id}
-            selected={props.barber === person.id}
-            setBarber={() => props.setBarber(person.id)}  />)}
+            id={person.id} />)}
         </ul>
       </section>
     </ul>

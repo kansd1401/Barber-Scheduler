@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import DayListItem from "../components/DayListItem";
 import DayList from "../components/DayList";
 import BarberListItem from "../components/BarberListItem"
+import BarberList from "../components/BarberList"
 
 
 
@@ -110,20 +111,12 @@ storiesOf("BarberListItem", module)
     { id: 5, firstName: "Sven",lastName: "Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
   ];
   
-  storiesOf("InterviewerList", module)
+  storiesOf("BarberList", module)
     .addParameters({
       backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
     })
-    .add("Initial", () => (
-      <InterviewerList
-        barbers={barbers}
-        setInterviewer={action("setInterviewer")}
-      />
-    ))
     .add("Preselected", () => (
-      <InterviewerList
-        interviewers={interviewers}
-        interviewer={3}
-        setInterviewer={action("setInterviewer")}
+      <BarberList
+        barbers={barbers}
       />
     ));

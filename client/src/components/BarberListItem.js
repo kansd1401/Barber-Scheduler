@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/BarberListItem.scss";
+import "./BarberListItem.scss";
 var classNames = require('classnames');
 
 
@@ -11,7 +11,7 @@ export default function BarberListItem(props) {
       <img
         className={"barbers__item-image"}
         src={props.avatar}
-        alt={props.name}
+        alt={props.firstName}
       />
       <div>
       <li>{props.firstName}</li>
