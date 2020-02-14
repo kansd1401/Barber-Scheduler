@@ -9,6 +9,7 @@ import DayListItem from "../components/DayListItem";
 import DayList from "../components/DayList";
 import BarberListItem from "../components/BarberListItem"
 import BarberList from "../components/BarberList"
+import Empty from "../components/Appointment/empty"
 
 
 
@@ -120,3 +121,13 @@ storiesOf("BarberListItem", module)
         barbers={barbers}
       />
     ));
+
+  storiesOf("Appointment", module)
+    .addParameters({
+      backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+    })
+    .add("Empty", () =>(
+      <Empty onAdd={action("onAdd")} />
+    ));
+
+  
