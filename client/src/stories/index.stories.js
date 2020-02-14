@@ -101,3 +101,29 @@ storiesOf("BarberListItem", module)
       avatar={barber.avatar}
     />
   ))
+
+  const barbers = [
+    { id: 1, firstName: "Sylvia",lastName: "Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
+    { id: 2, firstName: "Tori",lastName: "Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
+    { id: 3, firstName: "Mildred",lastName: "Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
+    { id: 4, firstName: "Cohana",lastName: "Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
+    { id: 5, firstName: "Sven",lastName: "Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
+  ];
+  
+  storiesOf("InterviewerList", module)
+    .addParameters({
+      backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+    })
+    .add("Initial", () => (
+      <InterviewerList
+        barbers={barbers}
+        setInterviewer={action("setInterviewer")}
+      />
+    ))
+    .add("Preselected", () => (
+      <InterviewerList
+        interviewers={interviewers}
+        interviewer={3}
+        setInterviewer={action("setInterviewer")}
+      />
+    ));
