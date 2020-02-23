@@ -9,10 +9,10 @@ export default function Appointment(props){
   return (
     <article className="appointment">
       <Header time={props.time} />
-      {!props.appointment && <Empty onAdd={() => console.log("clicked")} />}
-      {props.appointment && <Show 
-      name={props.appointment.name}
-      notes={props.appointment.notes}
+      <Empty onAdd={() => console.log("clicked")} />
+      {props.name && <Show 
+      name={props.name}
+      notes={props.notes}
       onEdit={props.onEdit}
       onDelete={props.onDelete}  />}
     </article>

@@ -11,6 +11,7 @@ import BarberListItem from "../components/BarberListItem"
 import BarberList from "../components/BarberList"
 import Appointment from "../components/Appointment"
 import Empty from "../components/Appointment/empty"
+import Show from "../components/Appointment/show"
 
 
 
@@ -122,13 +123,40 @@ storiesOf("BarberListItem", module)
         barbers={barbers}
       />
     ));
-
+  const appointment = {
+    name: "Pepe",
+    notes: "Haircut and color"
+  }
   storiesOf("Appointment", module)
     .addParameters({
       backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
     })
-    .add("Empty", () => (
-      <Appointment time="1pm"/>
+    .add("Appointment Empty", () => (
+      <Fragment>
+        <Appointment id={1} time="12pm" />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ))
+    .add("Appointment Booked", () => (
+      <Fragment>
+        <Appointment
+          id={1}
+          time="12pm"
+          name="Pepe"
+          notes="haircut and coloring"
+          onEdit={()=> console.log("Edit")}
+          onDelete={()=> console.log("Delete")}
+        />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ))
+    .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+    .add("Show", () => (
+      <Show time="1pm"
+      name="Pepe"
+      notes="haircut and coloring"
+      onEdit={()=> console.log("Edit")}
+      onDelete={()=> console.log("Delete")}/>
     ));
 
   
