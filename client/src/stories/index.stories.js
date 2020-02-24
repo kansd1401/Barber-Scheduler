@@ -83,34 +83,34 @@ storiesOf("Button", module)
       note: Haircut
     },
     {
-      id: 1,
-      slot: 1,
-      name: Pepe,
+      id: 2,
+      slot: 2,
+      name: Leeory,
+      note: Coloring
+    },
+    {
+      id: 3,
+      slot: 3,
+      name: Devin,
+      note: Haircut and coloring
+    },
+    {
+      id: 4,
+      slot: 4,
+      name: Mathew,
       note: Haircut
     },
     {
-      id: 1,
-      slot: 1,
-      name: Pepe,
-      note: Haircut
+      id: 6,
+      slot: 6,
+      name: Taika,
+      note: Haircut and shaving
     },
     {
-      id: 1,
-      slot: 1,
-      name: Pepe,
-      note: Haircut
-    },
-    {
-      id: 1,
-      slot: 1,
-      name: Pepe,
-      note: Haircut
-    },
-    {
-      id: 1,
-      slot: 1,
-      name: Pepe,
-      note: Haircut
+      id: 7,
+      slot: 7,
+      name: Mac,
+      note: Clean shave
     }
   ]
   
