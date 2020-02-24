@@ -8,8 +8,7 @@ import "./styles.scss"
 export default function Appointment(props){
   return (
     <article className="appointment">
-      <Header time={props.time} />
-      <Empty onAdd={() => console.log("clicked")} />
+     {!props.name &&  <Empty onAdd={() => console.log("clicked")} />}
       {props.name && <Show 
       name={props.name}
       notes={props.notes}

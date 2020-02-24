@@ -11,7 +11,7 @@ export default function Show(props) {
         </section>
       </section>
       <section className="appointment__card-right">
-        <section className="appointment__actions">
+        {/* <section className="appointment__actions">
           <img
             className="appointment__actions-button"
             src="images/edit.png"
@@ -24,7 +24,7 @@ export default function Show(props) {
             alt="Delete"
             onClick={props.onDelete}
           />
-        </section>
+        </section> */}
       </section>
     </main>
   );

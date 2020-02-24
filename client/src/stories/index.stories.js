@@ -17,7 +17,7 @@ import Show from "../components/Appointment/show"
 
 storiesOf("Button", module)
   .addParameters({
-    backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
   })
   .add("Base", () => <Button>Base</Button>)
   .add("Confirm", () => <Button confirm>Confirm</Button>)
@@ -59,21 +59,60 @@ storiesOf("Button", module)
       date: 25,
     },
     {
-      id: 3,
+      id: 4,
       name: "THU",
       date: 26,
     },
     {
-      id: 3,
+      id: 5,
       name: "FRI",
       date: 27,
     },
     {
-      id: 3,
+      id: 6,
       name: "SAT",
       date: 28,
     },
   ];
+
+  const appointments = [
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    },
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    },
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    },
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    },
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    },
+    {
+      id: 1,
+      slot: 1,
+      name: Pepe,
+      note: Haircut
+    }
+  ]
   
   storiesOf("DayList", module)
   .addParameters({
@@ -129,7 +168,7 @@ storiesOf("BarberListItem", module)
   }
   storiesOf("Appointment", module)
     .addParameters({
-      backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+      backgrounds: [{ name: "white", value: "#fff", default: true }]
     })
     .add("Appointment Empty", () => (
       <Fragment>

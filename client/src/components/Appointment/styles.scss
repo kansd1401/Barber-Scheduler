@@ -12,6 +12,7 @@ $appointment-height: 11rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 300px;
 
     &-button {
       @include button-inactive--opacity;
@@ -42,6 +43,7 @@ $appointment-height: 11rem;
     justify-content: space-between;
     flex-flow: row wrap;
     color: $white;
+    width: 300px;
 
     &-left {
       display: flex;
@@ -63,19 +65,8 @@ $appointment-height: 11rem;
     }
 
     &--show {
-      color: rgba($booked-color, $active-opacity);
-      background: linear-gradient(
-        90deg,
-        rgba($booked-color, $active-opacity),
-        rgba($booked-color, $active-opacity) 8px,
-        rgba($booked-color, $inactive-opacity) 0,
-        rgba($booked-color, $inactive-opacity)
-      );
-
-      &:hover {
-        color: darken($white, 5%);
-        background-color: rgba($booked-color, $active-opacity);
-      }
+      color: darken($black, 5%);
+      background-color: rgba($booked-color, $active-opacity);
     }
 
     &--status {
@@ -115,6 +106,7 @@ $appointment-height: 11rem;
       @include button-inactive--opacity;
       margin-right: 0.5rem;
       display: none;
+      color: $black;
 
       &:hover {
         @include button-active--opacity;
