@@ -13,7 +13,8 @@ export default function BarberList(props) {
             firstName={person.firstName}
             lastName={person.lastName}
             avatar={person.avatar}
-            id={person.id} />)}
+            id={person.id}
+            appointments={person.appointments} />)}
         </ul>
       </section>
     </ul>

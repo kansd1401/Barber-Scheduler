@@ -78,39 +78,35 @@ storiesOf("Button", module)
   const appointments = [
     {
       id: 1,
-      slot: 1,
-      name: Pepe,
-      note: Haircut
+      slot: 1
     },
     {
       id: 2,
       slot: 2,
-      name: Leeory,
-      note: Coloring
+      name: "Leeory",
+      notes: "Coloring"
     },
     {
       id: 3,
       slot: 3,
-      name: Devin,
-      note: Haircut and coloring
+      name: "Devin",
+      notes: "Haircut and coloring"
     },
     {
       id: 4,
-      slot: 4,
-      name: Mathew,
-      note: Haircut
+      slot: 4
     },
     {
       id: 6,
       slot: 6,
-      name: Taika,
-      note: Haircut and shaving
+      name: "Taika",
+      notes: "Haircut and shaving"
     },
     {
       id: 7,
       slot: 7,
-      name: Mac,
-      note: Clean shave
+      name: "Mac",
+      notes: "Clean shave"
     }
   ]
   
@@ -142,15 +138,16 @@ storiesOf("BarberListItem", module)
       firstName={barber.firstName}
       lastName={barber.lastName}
       avatar={barber.avatar}
+      appointments={appointments}
     />
   ))
 
   const barbers = [
-    { id: 1, firstName: "Sylvia",lastName: "Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
-    { id: 2, firstName: "Tori",lastName: "Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
-    { id: 3, firstName: "Mildred",lastName: "Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
-    { id: 4, firstName: "Cohana",lastName: "Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
-    { id: 5, firstName: "Sven",lastName: "Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
+    { id: 1, firstName: "Sylvia",lastName: "Palmer", avatar: "https://i.imgur.com/LpaY82x.png",appointments },
+    { id: 2, firstName: "Tori",lastName: "Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png",appointments },
+    { id: 3, firstName: "Mildred",lastName: "Nazir", avatar: "https://i.imgur.com/T2WwVfS.png",appointments },
+    { id: 4, firstName: "Cohana",lastName: "Roy", avatar: "https://i.imgur.com/FK8V841.jpg",appointments },
+    { id: 5, firstName: "Sven",lastName: "Jones", avatar: "https://i.imgur.com/twYrpay.jpg",appointments }
   ];
   
   storiesOf("BarberList", module)
