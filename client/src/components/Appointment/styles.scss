@@ -62,10 +62,25 @@ $appointment-height: 9rem;
       background-color: $dark-background;
       display: flex;
     }
-
-    &--show {
+    &--show1 {
       color: darken($black, 5%);
-      background-color: rgba($booked-color, $active-opacity);
+      background-color: rgba($booked-color1, $active-opacity);
+    }
+    &--show2 {
+      color: darken($black, 5%);
+      background-color: rgba($booked-color2, $active-opacity);
+    }
+    &--show3 {
+      color: darken($black, 5%);
+      background-color: rgba($booked-color3, $active-opacity);
+    }
+    &--show4 {
+      color: darken($black, 5%);
+      background-color: rgba($booked-color4, $active-opacity);
+    }
+    &--show5 {
+      color: darken($black, 5%);
+      background-color: rgba($booked-color5, $active-opacity);
     }
 
     &--status {
