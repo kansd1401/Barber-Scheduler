@@ -31,13 +31,12 @@ $appointment-height: 11rem;
     border: 0;
     border-bottom: 1px solid darken($white, 5%);
     width: 100%;
-    margin-left: 1rem;
+    // margin-left: 1rem;
   }
 
   &__card {
     min-height: $appointment-height;
-    margin-left: 3rem;
-    border-radius: 0.5rem;
+    margin: 0.2rem;
     padding: 1.2rem 1.5rem;
     display: flex;
     justify-content: space-between;
