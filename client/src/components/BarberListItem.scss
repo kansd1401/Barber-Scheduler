@@ -11,12 +11,12 @@
     // border-radius: 16px;
     // height: 32px;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-left: 2px;
     padding-right: 1rem;
     font-size: larger;
     max-width: 300px;
-
     
     &-image {
       border-radius: 30px;
@@ -29,4 +29,8 @@
     //   @include button-active--opacity;
     // }
   }
+}
+
+.box{
+  align-items: center;
 }

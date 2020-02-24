@@ -3,7 +3,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/animations.scss";
 
-$appointment-height: 11rem;
+$appointment-height: 9rem;
 
 .appointment {
   &__add {
@@ -12,7 +12,7 @@ $appointment-height: 11rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 200px;
 
     &-button {
       @include button-inactive--opacity;
@@ -42,7 +42,7 @@ $appointment-height: 11rem;
     justify-content: space-between;
     flex-flow: row wrap;
     color: $white;
-    width: 300px;
+    width: 200px;
 
     &-left {
       display: flex;

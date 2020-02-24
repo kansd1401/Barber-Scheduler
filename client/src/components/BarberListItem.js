@@ -9,17 +9,19 @@ export default function BarberListItem(props) {
 
   return (
     <div>
-      <ul className={classes}>
-        <img
-          className={"barbers__item-image"}
-          src={props.avatar}
-          alt={props.firstName}
-        />
-        <div>
-        <li>{props.firstName}</li>
-        <li>{props.lastName}</li>
-        </div>
-      </ul>
+      <div className="box">
+        <ul className={classes}>
+          <img
+            className={"barbers__item-image"}
+            src={props.avatar}
+            alt={props.firstName}
+          />
+          <div>
+          <li>{props.firstName}</li>
+          <li>{props.lastName}</li>
+          </div>
+        </ul>
+      </div>
       <React.Fragment>
        {props.appointments.map((appointment) => <Appointment 
        name={appointment.name}
