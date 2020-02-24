@@ -8,7 +8,7 @@ $appointment-height: 9rem;
 .appointment {
   &__add {
     min-height: $appointment-height;
-    padding: 2rem 0;
+    // padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,12 +31,12 @@ $appointment-height: 9rem;
     border: 0;
     border-bottom: 1px solid darken($white, 5%);
     width: 100%;
-    // margin-left: 1rem;
   }
 
   &__card {
     min-height: $appointment-height;
-    margin: 0.2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
     padding: 1.2rem 1.5rem;
     display: flex;
     justify-content: space-between;
