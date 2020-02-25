@@ -7,25 +7,41 @@ const days = [];
 
 function daysData(day){
   var weekDays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  let d = new Date(day)
   for(let i=1;i<=7;i++){
-    days.push({id: i,name: weekDays[day.getDay()], date: day.getDate()})
-    day.setDate(day.getDate() + 1)
+    days.push({id: i,name: weekDays[d.getDay()], date: d.getDate()})
+    d.setDate(d.getDate() + 1)
   }
+}
+
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [day, month, year].join('-');
 }
 
 function App() {
   let barbersForDay;
-  let currentDay = "06-02-2020"
-  let date = new Date('February 06, 2020 03:24:00')
-  daysData(date)
-  console.log(days)
+  // Needs to be switched to getting live date instead of fixed one when app goes live
+  const currentDay = new Date('2020-02-06T03:24:00')
+  daysData(currentDay)
+  console.log(currentDay)
   axios.get('http://localhost:8000/dayData',{
     params:{
-      date: currentDay
+      date: formatDate(currentDay)
     }
   })
     .then((response)=> {
       barbersForDay = response.data.barbers
+      console.log(barbersForDay)
     })
   return (
     <div className="App">
