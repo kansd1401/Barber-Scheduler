@@ -1,32 +1,30 @@
 import React from 'react';
-// import './App.css';
-const axios = require('axios');
+import axios from 'axios';
+import DayList from './DayList'
+import { func } from 'prop-types';
+const days = [];
+
+function daysData(day){
+  var weekDays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  for(i=1;i<=7;i++){
+
+  }
+}
 
 function App() {
-  console.log("yooooooooooo")
+  let barbersForDay;
+  let currentDay = "06-02-2020"
   axios.get('http://localhost:8000/dayData',{
     params:{
-      date: "06-02-2020"
+      date: currentDay
     }
   })
     .then((response)=> {
-      console.log(response)
+      barbersForDay = response.data.barbers
     })
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DayList days={days}/>
     </div>
   );
 }
