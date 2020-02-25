@@ -1,7 +1,13 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
+const axios = require('axios');
 
 function App() {
+  console.log("yooooooooooo")
+  axios.get('http://localhost:8000/dayData',{ crossdomain: true })
+    .then((response)=> {
+      console.log(response)
+    })
   return (
     <div className="App">
       <header className="App-header">
