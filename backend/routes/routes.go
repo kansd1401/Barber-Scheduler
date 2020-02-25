@@ -49,13 +49,15 @@ func Router(db *gorm.DB) {
 	router.GET("/dayData", func(c *gin.Context) {
 		type Barbers struct {
 			ID        int
-			firstName string
-			lastName  string
+			FirstName string
+			LastName  string
 			image     string
 		}
 		var barbers []Barbers
-		db.Table("barbers").Select("id, firstName, lastName, image").Scan(&barbers)
-		fmt.Println(barbers)
+		db.Table("barbers").Select("id, first_name, last_name, image").Scan(&barbers)
+		// db.Raw("SELECT id, first_name, last_name, image FROM barbers").Scan(&barbers)
+		// db.Find(&barbers)
+		fmt.Println(&barbers)
 		c.JSON(200, gin.H{
 			"status":  "barbersssss",
 			"barbers": barbers,
