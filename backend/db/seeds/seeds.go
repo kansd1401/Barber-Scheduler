@@ -29,7 +29,7 @@ func Seed(db *gorm.DB) {
 	db.Create(&barber4)
 	db.Create(&barber5)
 
-	appointment := createAppointments(user1, barber1, 0, "04-02-2020", "Haircut and color")
+	appointment := createAppointments(user1, barber1, 5, "04-02-2020", "Haircut and color")
 	appointment1 := createAppointments(user, barber5, 2, "05-02-2020", "Shave")
 	appointment2 := createAppointments(user3, barber3, 1, "06-02-2020", "Coloring")
 	appointment3 := createAppointments(user2, barber2, 2, "06-02-2020", "Clean Shave and haircut")
