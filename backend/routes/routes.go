@@ -12,6 +12,7 @@ import (
 
 func Router(db *gorm.DB) {
 	router := gin.Default()
+
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:3000"},
 		AllowMethods:     []string{"PUT", "PATCH", "GET"},
@@ -23,6 +24,7 @@ func Router(db *gorm.DB) {
 		},
 		MaxAge: 12 * time.Hour,
 	}))
+
 	//Users
 	router.GET("/users", func(c *gin.Context) {
 		var users []schema.Users
@@ -73,6 +75,7 @@ func Router(db *gorm.DB) {
 			Image        string
 			Appointments []Appointments
 		}
+		fmt.Println(c.Query("date"))
 		var barbers []Barbers
 		db.Table("barbers").Select("barbers.id, barbers.first_name, barbers.last_name, barbers.image").Joins("left join hours on barbers.id = hours.barber_id").Where("hours.date = ?", "06-02-2020").Scan(&barbers)
 		for i := 0; i < len(barbers); i++ {

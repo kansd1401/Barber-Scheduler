@@ -4,7 +4,11 @@ const axios = require('axios');
 
 function App() {
   console.log("yooooooooooo")
-  axios.get('http://localhost:8000/dayData',{ crossdomain: true })
+  axios.get('http://localhost:8000/dayData',{
+    params:{
+      date: "06-02-2020"
+    }
+  })
     .then((response)=> {
       console.log(response)
     })
