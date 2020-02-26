@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import DayList from './DayList'
+import BarberList from './BarberList'
 import { func } from 'prop-types';
 
 const days = [];
@@ -32,21 +33,25 @@ let barbersForDay;
 // Needs to be switched to getting live date instead of fixed one when app goes live
 const currentDay = new Date('2020-02-06T03:24:00')
 daysData(currentDay)
-axios.get('http://localhost:8000/dayData',{
-  params:{
-    date: formatDate(currentDay)
-  }
-})
-  .then((response)=> {
-    barbersForDay = response.data.barbers
-  })
+
 
 function App() {
-  
   const [day, setDay] = useState(days[0].name);
+  const [barbers, setBarbers] = useState(0)
+  useEffect(() =>{
+    axios.get('http://localhost:8000/dayData',{
+    params:{
+      date: formatDate(currentDay)
+    }
+  })
+    .then((response)=> {
+      setBarbers(response.data.barbers)
+    })
+  },[day])
   return (
     <div className="App">
       <DayList days={days} day={day} setDay={setDay}/>
+      {barbers && <BarberList barbers={barbers}/>}
     </div>
   );
 }

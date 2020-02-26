@@ -10,11 +10,11 @@ export default function BarberList(props) {
         <h4 className="barbers__header text--light">Barbers</h4>
         <ul className="barbers__list">
           {props.barbers.map((person) => <BarberListItem
-            firstName={person.firstName}
-            lastName={person.lastName}
-            avatar={person.avatar}
-            id={person.id}
-            appointments={person.appointments} />)}
+            firstName={person.FirstName}
+            lastName={person.LastName}
+            avatar={person.Image}
+            id={person.ID}
+            appointments={person.Appointments} />)}
         </ul>
       </section>
     </ul>

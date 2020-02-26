@@ -148,11 +148,11 @@ storiesOf("BarberListItem", module)
   ))
 
   const barbers = [
-    { id: 1, firstName: "Sylvia",lastName: "Palmer", avatar: "https://i.imgur.com/LpaY82x.png",appointments },
-    { id: 2, firstName: "Tori",lastName: "Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png",appointments },
-    { id: 3, firstName: "Mildred",lastName: "Nazir", avatar: "https://i.imgur.com/T2WwVfS.png",appointments },
-    { id: 4, firstName: "Cohana",lastName: "Roy", avatar: "https://i.imgur.com/FK8V841.jpg",appointments },
-    { id: 5, firstName: "Sven",lastName: "Jones", avatar: "https://i.imgur.com/twYrpay.jpg",appointments }
+    { id: 1, firstName: "Sylvia",lastName: "Palmer", image: "https://i.imgur.com/LpaY82x.png",appointments },
+    { id: 2, firstName: "Tori",lastName: "Malcolm", image: "https://i.imgur.com/Nmx0Qxo.png",appointments },
+    { id: 3, firstName: "Mildred",lastName: "Nazir", image: "https://i.imgur.com/T2WwVfS.png",appointments },
+    { id: 4, firstName: "Cohana",lastName: "Roy", image: "https://i.imgur.com/FK8V841.jpg",appointments },
+    { id: 5, firstName: "Sven",lastName: "Jones", image: "https://i.imgur.com/twYrpay.jpg",appointments }
   ];
   
   storiesOf("BarberList", module)
