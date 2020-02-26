@@ -5,7 +5,9 @@ import BarberListItem from "./BarberListItem"
 import Button from "./Button" 
 
 export default function Popup (props) {  
-  const [name, setName] = useState(props.name || "");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [note, setNote] = useState("");
   const [error, setError] = useState("");
   return (  
     <div className='popup'> 
@@ -17,10 +19,25 @@ export default function Popup (props) {
             className="appointment__create-input text--semi-bold"
             name="name"
             type="text"
-            placeholder="Enter Student Name"
+            placeholder="Name"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            data-testid="student-name-input"
+          />
+          <input 
+            className="appointment__create-input text--semi-bold"
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input 
+            className="appointment__create-input text--semi-bold"
+            name="email"
+            type="text"
+            placeholder="Notes"
+            value={note}
+            onChange={(event) => setNote(event.target.value)}
           />
           <section className="appointment__validation">{error}</section>
         </form>

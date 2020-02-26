@@ -6,7 +6,6 @@ import Popup from './Popup'
 import { func } from 'prop-types';
 
 const days = [];
-
 function daysData(day){
   var weekDays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
   let d = new Date(day)

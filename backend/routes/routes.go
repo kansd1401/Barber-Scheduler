@@ -66,6 +66,7 @@ func Router(db *gorm.DB) {
 			LastName  string
 			Slot      int
 			Note      string
+			Time      string
 		}
 		type Barbers struct {
 			ID           int
@@ -74,6 +75,7 @@ func Router(db *gorm.DB) {
 			Image        string
 			Appointments []Appointments
 		}
+		times := []string{"12:00", "1:00", "2:00", "3:00", "4;00", "5:00", "6:00"}
 		date := c.Query("date")
 		var barbers []Barbers
 		db.Table("barbers").Select("barbers.id, barbers.first_name, barbers.last_name, barbers.image").Joins("left join hours on barbers.id = hours.barber_id").Where("hours.date = ?", date).Scan(&barbers)
@@ -86,10 +88,16 @@ func Router(db *gorm.DB) {
 					if appointments[k].Slot == j {
 						barbers[i].Appointments = append(barbers[i].Appointments, appointments[k])
 						found = true
+						if i == 0 {
+							barbers[i].Appointments[j-1].Time = times[j-1]
+						}
 					}
 				}
 				if found == false {
 					barbers[i].Appointments = append(barbers[i].Appointments, Appointments{Slot: j, ID: j})
+					if i == 0 {
+						barbers[i].Appointments[j-1].Time = times[j-1]
+					}
 				}
 			}
 		}
