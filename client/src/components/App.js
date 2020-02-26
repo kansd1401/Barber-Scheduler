@@ -40,6 +40,10 @@ function App() {
   const [day, setDay] = useState(days[0].name);
   const [barbers, setBarbers] = useState(0)
   const [add, setAdd] = useState(false);
+
+  function selectBarber() {
+    setAdd(true)
+  }
   useEffect(() =>{
     axios.get('http://localhost:8000/dayData',{
     params:{
@@ -54,7 +58,7 @@ function App() {
   return (
     <div className="App">
       <DayList days={days} day={day} setDay={setDay}/>
-      {barbers && <BarberList barbers={barbers} onAdd={setAdd}/>}
+      {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       {add && <Popup onClose={() => setAdd(false)}/>}
     </div>
   );
