@@ -78,7 +78,17 @@ func Router(db *gorm.DB) {
 		var barbers []Barbers
 		db.Table("barbers").Select("barbers.id, barbers.first_name, barbers.last_name, barbers.image").Joins("left join hours on barbers.id = hours.barber_id").Where("hours.date = ?", date).Scan(&barbers)
 		for i := 0; i < len(barbers); i++ {
-			db.Table("appointments").Select("appointments.id, users.first_name, users.last_name, appointments.slot, appointments.note").Joins("left join users on appointments.user_id = users.id").Where("appointments.date = ?", date).Where("appointments.barber_id = ?", barbers[i].ID).Scan(&barbers[i].Appointments)
+			var appointments []Appointments
+			db.Table("appointments").Select("appointments.id, users.first_name, users.last_name, appointments.slot, appointments.note").Joins("left join users on appointments.user_id = users.id").Where("appointments.date = ?", date).Where("appointments.barber_id = ?", barbers[i].ID).Scan(&appointments)
+			for j := 1; j < 7; j++ {
+				for k := 0; k < len(appointments); k++ {
+					if appointments[k].Slot == j {
+						barbers[i].Appointments = append(barbers[i].Appointments, appointments[k])
+					} else {
+						barbers[i].Appointments = append(barbers[i].Appointments, Appointments{Slot: j})
+					}
+				}
+			}
 		}
 		c.JSON(200, gin.H{
 			"status":  "barbersssss",
