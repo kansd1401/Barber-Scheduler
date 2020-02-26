@@ -9,7 +9,7 @@ export default function Appointment(props){
   return (
     <article className="appointment">
       <Header time={props.time} />
-     {!props.name &&  <Empty onAdd={() => console.log("clicked")} />}
+     {!props.name &&  <Empty onAdd={props.onAdd} />}
       {props.name && <Show 
       name={props.name}
       notes={props.notes}

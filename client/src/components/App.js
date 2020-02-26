@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import DayList from './DayList'
 import BarberList from './BarberList'
+import Popup from './Popup'
 import { func } from 'prop-types';
 
 const days = [];
@@ -38,7 +39,7 @@ daysData(currentDay)
 function App() {
   const [day, setDay] = useState(days[0].name);
   const [barbers, setBarbers] = useState(0)
-
+  const [add, setAdd] = useState(false);
   useEffect(() =>{
     axios.get('http://localhost:8000/dayData',{
     params:{
@@ -53,7 +54,8 @@ function App() {
   return (
     <div className="App">
       <DayList days={days} day={day} setDay={setDay}/>
-      {barbers && <BarberList barbers={barbers}/>}
+      {barbers && <BarberList barbers={barbers} onAdd={setAdd}/>}
+      {add && <Popup onClose={() => setAdd(false)}/>}
     </div>
   );
 }

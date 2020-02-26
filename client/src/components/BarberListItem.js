@@ -27,7 +27,8 @@ export default function BarberListItem(props) {
        id={appointment.ID}
        name={appointment.FirstName+appointment.LastName}
        slot={appointment.Slot}
-       notes={appointment.Note} />)}
+       notes={appointment.Note}
+       onAdd={props.onAdd} />)}
        <Appointment id="last"/>
       </React.Fragment>
     </div>
