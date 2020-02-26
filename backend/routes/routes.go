@@ -81,12 +81,15 @@ func Router(db *gorm.DB) {
 			var appointments []Appointments
 			db.Table("appointments").Select("appointments.id, users.first_name, users.last_name, appointments.slot, appointments.note").Joins("left join users on appointments.user_id = users.id").Where("appointments.date = ?", date).Where("appointments.barber_id = ?", barbers[i].ID).Scan(&appointments)
 			for j := 1; j < 7; j++ {
+				found := false
 				for k := 0; k < len(appointments); k++ {
 					if appointments[k].Slot == j {
 						barbers[i].Appointments = append(barbers[i].Appointments, appointments[k])
-					} else {
-						barbers[i].Appointments = append(barbers[i].Appointments, Appointments{Slot: j})
+						found = true
 					}
+				}
+				if found == false {
+					barbers[i].Appointments = append(barbers[i].Appointments, Appointments{Slot: j, ID: j})
 				}
 			}
 		}

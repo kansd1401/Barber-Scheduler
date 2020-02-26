@@ -24,6 +24,7 @@ export default function BarberListItem(props) {
       </div>
       <React.Fragment>
        {props.appointments.map((appointment) => <Appointment 
+       id={appointment.ID}
        name={appointment.FirstName+appointment.LastName}
        slot={appointment.Slot}
        notes={appointment.Note} />)}

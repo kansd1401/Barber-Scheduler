@@ -31,17 +31,18 @@ function formatDate(date) {
 
 let barbersForDay;
 // Needs to be switched to getting live date instead of fixed one when app goes live
-const currentDay = new Date('2020-02-06T03:24:00')
+let currentDay = new Date('2020-02-02T03:24:00')
 daysData(currentDay)
 
 
 function App() {
   const [day, setDay] = useState(days[0].name);
   const [barbers, setBarbers] = useState(0)
+
   useEffect(() =>{
     axios.get('http://localhost:8000/dayData',{
     params:{
-      date: formatDate(currentDay)
+      date: days[days.findIndex((x)=> x.name == day)].fullDate
     }
   })
     .then((response)=> {
