@@ -49,8 +49,8 @@ function App() {
     setSlot(slot)
     setAdd(true)
   }
-  function createAppointment(){
-
+  function createAppointment(data){
+    console.log(data)
   }
 
   useEffect(() =>{

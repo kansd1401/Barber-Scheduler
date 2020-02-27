@@ -11,7 +11,7 @@ export default function Popup (props) {
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
   function save(){
-    
+    props.onSave({user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
   }
   return (  
     <div className='popup'> 
@@ -28,7 +28,7 @@ export default function Popup (props) {
           <div>
             <input 
               className="appointment__create-input text--semi-bold"
-              name="name"
+              name="firstName"
               type="text"
               placeholder="First Name"
               value={firstName}
@@ -36,7 +36,7 @@ export default function Popup (props) {
             />
               <input 
               className="appointment__create-input text--semi-bold"
-              name="name"
+              name="lastName"
               type="text"
               placeholder="Last Name"
               value={lastName}
