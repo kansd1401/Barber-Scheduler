@@ -42,16 +42,21 @@ function App() {
   const [add, setAdd] = useState(false);
   const [barber, setBarber] = useState(0)
   const [slot, setSlot] = useState(0)
+  let date = days[days.findIndex((x)=> x.name == day)].fullDate
 
   function selectBarber(id, slot) {
     setBarber(barbers[barbers.findIndex((x)=> x.ID == id)])
     setSlot(slot)
     setAdd(true)
   }
+  function createAppointment(){
+
+  }
+
   useEffect(() =>{
     axios.get('http://localhost:8000/dayData',{
     params:{
-      date: days[days.findIndex((x)=> x.name == day)].fullDate
+      date: date
     }
   })
     .then((response)=> {
@@ -65,9 +70,11 @@ function App() {
       {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       {add && <Popup 
       onClose={() => setAdd(false)}
+      onSave={createAppointment}
       barber={barber}
       slot={slot}
       times={times}
+      date={date}
       />}
     </div>
   );
