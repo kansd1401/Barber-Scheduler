@@ -15,7 +15,7 @@ export default function BarberList(props) {
             avatar={person.Image}
             id={person.ID}
             appointments={person.Appointments}
-            onAdd ={()=>props.onAdd(true)} />)}
+            onAdd ={props.onAdd} />)}
         </ul>
       </section>
     </ul>

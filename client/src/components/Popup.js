@@ -15,6 +15,10 @@ export default function Popup (props) {
         <main className="appointment__card appointment__card--create" >
       <section className="appointment__card-left">
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+          <BarberListItem firstName={props.barber.FirstName}
+            lastName={props.barber.LastName}
+            avatar={props.barber.Image}
+            id={props.barber.ID}/>
           <input 
             className="appointment__create-input text--semi-bold"
             name="name"

@@ -6,6 +6,7 @@ import Popup from './Popup'
 import { func } from 'prop-types';
 
 const days = [];
+const times = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00"]
 function daysData(day){
   var weekDays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
   let d = new Date(day)
@@ -39,8 +40,12 @@ function App() {
   const [day, setDay] = useState(days[0].name);
   const [barbers, setBarbers] = useState(0)
   const [add, setAdd] = useState(false);
+  const [barber, setBarber] = useState(0)
+  const [slot, setSlot] = useState(0)
 
-  function selectBarber() {
+  function selectBarber(id, slot) {
+    setBarber(barbers[barbers.findIndex((x)=> x.ID == id)])
+    setSlot(slot)
     setAdd(true)
   }
   useEffect(() =>{
@@ -58,7 +63,12 @@ function App() {
     <div className="App">
       <DayList days={days} day={day} setDay={setDay}/>
       {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
-      {add && <Popup onClose={() => setAdd(false)}/>}
+      {add && <Popup 
+      onClose={() => setAdd(false)}
+      barber={barber}
+      slot={slot}
+      times={times}
+      />}
     </div>
   );
 }

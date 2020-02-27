@@ -22,6 +22,7 @@ export default function BarberListItem(props) {
           </div>
         </ul>
       </div>
+      {props.appointments &&
       <React.Fragment>
        {props.appointments.map((appointment) => <Appointment 
        id={appointment.ID}
@@ -29,9 +30,9 @@ export default function BarberListItem(props) {
        slot={appointment.Slot}
        notes={appointment.Note}
        time={appointment.Time}
-       onAdd={props.onAdd} />)}
+       onAdd={() => props.onAdd(props.id,appointment.Slot)} />)}
        <Appointment id="last"/>
-      </React.Fragment>
+      </React.Fragment>}
     </div>
   );
 }
