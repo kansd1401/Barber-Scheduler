@@ -1,8 +1,9 @@
-import React,{useState} from 'react';  
+import React,{useState} from 'react'; 
+import axios from 'axios';
 import './Popup.scss'; 
-import './Form.scss'
-import BarberListItem from "./BarberListItem"
-import Button from "./Button" 
+import './Form.scss';
+import BarberListItem from "./BarberListItem";
+import Button from "./Button";
 
 export default function Popup (props) {  
   const [firstName, setFirstName] = useState("");
@@ -10,9 +11,17 @@ export default function Popup (props) {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
+
   function save(){
-    props.onSave({user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
+    axios.post('http://localhost:8000/appointment/new', {user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+
   return (  
     <div className='popup'> 
       <div className='popup_inner'>  

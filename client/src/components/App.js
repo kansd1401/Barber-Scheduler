@@ -49,9 +49,6 @@ function App() {
     setSlot(slot)
     setAdd(true)
   }
-  function createAppointment(data){
-    console.log(data)
-  }
 
   useEffect(() =>{
     axios.get('http://localhost:8000/dayData',{
@@ -70,7 +67,6 @@ function App() {
       {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       {add && <Popup 
       onClose={() => setAdd(false)}
-      onSave={createAppointment}
       barber={barber}
       slot={slot}
       times={times}

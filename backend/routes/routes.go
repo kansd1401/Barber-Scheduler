@@ -58,6 +58,40 @@ func Router(db *gorm.DB) {
 		})
 	})
 
+	//Appointment
+	router.GET("/appointments", func(c *gin.Context) {
+		var users []schema.Users
+		db.Find(&users)
+		c.JSON(200, gin.H{
+			"status": "ya got got",
+			"users":  users,
+		})
+	})
+
+	router.GET("/appointments/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.JSON(200, gin.H{
+			"status":  "ya got got",
+			"message": "/users/" + id,
+		})
+	})
+
+	router.POST("/appointments/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.JSON(200, gin.H{
+			"status":  "ya got got",
+			"message": "/users/" + id,
+		})
+	})
+
+	router.POST("/appointments/:id/delete", func(c *gin.Context) {
+		id := c.Param("id")
+		c.JSON(200, gin.H{
+			"status":  "ya got got",
+			"message": "/users/" + id,
+		})
+	})
+
 	//Barbers with appointments for the day
 	router.GET("/dayData", func(c *gin.Context) {
 		type Appointments struct {
