@@ -14,8 +14,8 @@ func Router(db *gorm.DB) {
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:3000"},
-		AllowMethods:     []string{"PUT", "PATCH", "GET"},
-		AllowHeaders:     []string{"Origin"},
+		AllowMethods:     []string{"GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "x-requested-with", "content-type"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 		AllowOriginFunc: func(origin string) bool {
@@ -34,23 +34,31 @@ func Router(db *gorm.DB) {
 		})
 	})
 
-	router.GET("/users/:id", func(c *gin.Context) {
-		id := c.Param("id")
+	router.POST("/users/new", func(c *gin.Context) {
+		type User struct {
+			FirstName string
+			LastName  string
+			Email     string
+		}
+		var user User
+		c.BindJSON(&user)
+		// db.Table("users").Where("email = ?")
+		// var user schema.Users
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
-			"message": "/users/" + id,
+			"message": user,
 		})
 	})
 
-	router.POST("/users/:id", func(c *gin.Context) {
-		id := c.Param("id")
-		c.JSON(200, gin.H{
-			"status":  "ya got got",
-			"message": "/users/" + id,
-		})
-	})
+	// router.POST("/user/:id", func(c *gin.Context) {
+	// 	id := c.Param("id")
+	// 	c.JSON(200, gin.H{
+	// 		"status":  "ya got got",
+	// 		"message": "/users/" + id,
+	// 	})
+	// })
 
-	router.POST("/users/:id/delete", func(c *gin.Context) {
+	router.POST("/user/:id/delete", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
@@ -60,15 +68,15 @@ func Router(db *gorm.DB) {
 
 	//Appointment
 	router.GET("/appointments", func(c *gin.Context) {
-		var users []schema.Users
-		db.Find(&users)
+		var appointments []schema.Appointments
+		db.Find(&appointments)
 		c.JSON(200, gin.H{
-			"status": "ya got got",
-			"users":  users,
+			"status":       "ya got got",
+			"appointments": appointments,
 		})
 	})
 
-	router.GET("/appointments/:id", func(c *gin.Context) {
+	router.POST("/appointments/new", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
@@ -76,15 +84,14 @@ func Router(db *gorm.DB) {
 		})
 	})
 
-	router.POST("/appointments/:id", func(c *gin.Context) {
+	router.GET("/appointment/:id", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
 			"message": "/users/" + id,
 		})
 	})
-
-	router.POST("/appointments/:id/delete", func(c *gin.Context) {
+	router.POST("/appointment/:id/delete", func(c *gin.Context) {
 		id := c.Param("id")
 		c.JSON(200, gin.H{
 			"status":  "ya got got",

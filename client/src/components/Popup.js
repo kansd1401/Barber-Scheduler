@@ -13,13 +13,28 @@ export default function Popup (props) {
   const [error, setError] = useState("");
 
   function save(){
-    axios.post('http://localhost:8000/appointment/new', {user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
+    axios({
+      method: 'post',
+      url: 'http://localhost:8000/users/new',
+      data: {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+      }
+    })
     .then(function (response) {
       console.log(response);
     })
     .catch(function (error) {
       console.log(error);
     });
+    // axios.post('http://localhost:8000/appointment/new', {user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   }
 
   return (  
