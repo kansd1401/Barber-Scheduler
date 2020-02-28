@@ -40,10 +40,11 @@ func Router(db *gorm.DB) {
 			LastName  string
 			Email     string
 		}
-		var user User
-		c.BindJSON(&user)
-		// db.Table("users").Where("email = ?")
-		// var user schema.Users
+		var newUser User
+		c.BindJSON(&newUser)
+		var user schema.Users
+		// db.Table("users").Where("email = ?", user.Email)
+		db.FirstOrCreate(&user, newUser)
 		c.JSON(200, gin.H{
 			"status":  "ya got got",
 			"message": user,
