@@ -60,7 +60,7 @@ function App() {
       setBarbers(response.data.barbers)
       console.log(response.data.barbers)
     })
-  },[day])
+  },[day, add])
   return (
     <div className="App">
       <DayList days={days} day={day} setDay={setDay}/>
