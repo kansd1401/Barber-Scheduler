@@ -23,18 +23,29 @@ export default function Popup (props) {
       }
     })
     .then(function (response) {
-      console.log(response);
+      console.log(response.data.user)
+      axios({
+        method: 'post',
+        url: 'http://localhost:8000/appointments/new',
+        data: {
+          UserID: response.data.user.ID,
+          BarberID: props.barber.ID, 
+          Slot: props.slot, 
+          Date: props.date, 
+          Note: note
+        }
+      })
+      .then(function (res) {
+        console.log(res.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     })
     .catch(function (error) {
       console.log(error);
     });
-    // axios.post('http://localhost:8000/appointment/new', {user: {FirstName: firstName, LastName: lastName, Email: email},appointment: {Barber_ID: props.barber.ID, Slot: props.slot, Date: props.date, Note: note}})
-    // .then(function (response) {
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    
   }
 
   return (  
