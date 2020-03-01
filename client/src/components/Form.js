@@ -9,6 +9,8 @@ export default function Form(props) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
+  const [error, setError] = useState("");
+
 
   function save(){
     axios({
@@ -88,9 +90,8 @@ export default function Form(props) {
           value={note}
           onChange={(event) => setNote(event.target.value)}
         />
-        {/* <section className="appointment__validation">{error}</section> */}
+        <section className="appointment__validation">{error}</section>
       </form>
-      {/* <InterviewerList interviewers={props.interviewers} interviewer={interviewer} setInterviewer={setInterviewer} /> */}
     </section>
     <section className="appointment__card-right">
       <section className="appointment__actions">

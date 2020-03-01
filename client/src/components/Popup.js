@@ -8,7 +8,6 @@ import Error from "./Error";
 
 export default function Popup (props) {  
   
-  const [error, setError] = useState("");
 
 
   return (  
