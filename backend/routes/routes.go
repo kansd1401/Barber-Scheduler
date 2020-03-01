@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"time"
 
 	"../db/schema"
@@ -36,12 +35,7 @@ func Router(db *gorm.DB) {
 	})
 
 	router.POST("/users/new", func(c *gin.Context) {
-		type User struct {
-			FirstName string
-			LastName  string
-			Email     string
-		}
-		var newUser User
+		var newUser schema.Users
 		c.BindJSON(&newUser)
 		var user schema.Users
 		db.FirstOrCreate(&user, newUser)
@@ -78,48 +72,13 @@ func Router(db *gorm.DB) {
 	})
 
 	router.POST("/appointments/new", func(c *gin.Context) {
-		type Appointment struct {
-			User   schema.Users
-			Barber schema.Barbers
-			Slot   int
-			Date   string
-			Note   string
-		}
-		type Data struct {
-			BarberID int
-			UserID   int
-			Slot     int
-			Date     string
-			Note     string
-		}
-		var boi Data
-		var newAppointment Appointment
-		c.BindJSON(&boi)
-		c.BindJSON(&newAppointment)
-		newAppointment.Slot = boi.Slot
-		newAppointment.Date = boi.Date
-		newAppointment.Note = boi.Note
-		fmt.Println("we hereeeeeeeeeeeeeeee")
-		fmt.Println(boi.UserID)
-		fmt.Println(newAppointment)
-
-		db.Table("barbers").Where("barbers.id = ?", boi.BarberID).Scan(&newAppointment.Barber)
-		db.Table("users").Where("users.id = ?", boi.UserID).Scan(&newAppointment.User)
-		appointment := createAppointments(newAppointment.User, newAppointment.Barber, newAppointment.Slot, newAppointment.Date, newAppointment.Note)
-		var createdAppointment []schema.Appointments
-		db.Table("appointments").Where("barber_id = ?", boi.BarberID).Where("slot = ?", boi.Slot).Where("date = ?", boi.Date).Scan(&createdAppointment)
-		if len(createdAppointment) == 0 {
-			db.Create(&appointment)
-			c.JSON(201, gin.H{
-				"status":      "ya got got",
-				"appointment": appointment,
-			})
-		} else {
-			c.JSON(409, gin.H{
-				"status":  "ya got got",
-				"message": "Appointment slot filled",
-			})
-		}
+		var appointment schema.Appointments
+		c.BindJSON(&appointment)
+		db.Table("appointments").Where(appointment).FirstOrCreate(&appointment)
+		c.JSON(200, gin.H{
+			"status":       "ya got got",
+			"appointments": appointment,
+		})
 	})
 
 	router.GET("/appointment/:id", func(c *gin.Context) {

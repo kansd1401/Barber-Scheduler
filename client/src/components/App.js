@@ -58,7 +58,6 @@ function App() {
   })
     .then((response)=> {
       setBarbers(response.data.barbers)
-      console.log(response.data.barbers)
     })
   },[day, add])
   return (
