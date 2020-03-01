@@ -8,7 +8,7 @@ import "./styles.scss"
 export default function Appointment(props){
   return (
     <article className="appointment">
-      <Header time={props.time} />
+      <Header />
      {!props.name &&  <Empty onAdd={props.onAdd} />}
       {props.name && <Show 
       name={props.name}

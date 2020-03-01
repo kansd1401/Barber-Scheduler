@@ -8,8 +8,8 @@ export default function BarberListItem(props) {
   const classes = classNames("barbers__item");
 
   return (
-    <div>
-      <div className="box">
+    <div className="box">
+      <div >
         <ul className={classes}>
           <img
             className={"barbers__item-image"}
