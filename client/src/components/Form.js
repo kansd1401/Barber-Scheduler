@@ -25,7 +25,7 @@ export default function Form(props) {
     .then(function (response) {
       axios({
         method: 'post',
-        url: 'http://localhost:8000/appointments/new',
+        url: 'http://localhost:8000/forms/new',
         data: {
           UserID: response.data.user.ID,
           BarberID: props.barber.ID, 
@@ -47,8 +47,8 @@ export default function Form(props) {
   }
 
   return (
-    <main className="appointment__card appointment__card--create" >
-    <section className="appointment__card-left">
+    <main className="form__card form__card--create" >
+    <section className="form__card-left">
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
         <BarberListItem firstName={props.barber.FirstName}
           lastName={props.barber.LastName}
@@ -58,7 +58,7 @@ export default function Form(props) {
         <h2 className="text--regular">{props.date}</h2>
         <div>
           <input 
-            className="appointment__create-input text--semi-bold"
+            className="form__create-input text--semi-bold"
             name="firstName"
             type="text"
             placeholder="First Name"
@@ -66,7 +66,7 @@ export default function Form(props) {
             onChange={(event) => setFirstName(event.target.value)}
           />
             <input 
-            className="appointment__create-input text--semi-bold"
+            className="form__create-input text--semi-bold"
             name="lastName"
             type="text"
             placeholder="Last Name"
@@ -75,7 +75,7 @@ export default function Form(props) {
           />
         </div>
         <input 
-          className="appointment__create-input text--semi-bold"
+          className="form__create-input text--semi-bold"
           name="email"
           type="text"
           placeholder="Email"
@@ -83,18 +83,18 @@ export default function Form(props) {
           onChange={(event) => setEmail(event.target.value)}
         />
         <input 
-          className="appointment__create-input text--semi-bold"
+          className="form__create-input text--semi-bold"
           name="email"
           type="text"
           placeholder="Notes"
           value={note}
           onChange={(event) => setNote(event.target.value)}
         />
-        <section className="appointment__validation">{error}</section>
+        <section className="form__validation">{error}</section>
       </form>
     </section>
-    <section className="appointment__card-right">
-      <section className="appointment__actions">
+    <section className="form__card-right">
+      <section className="form__actions">
         <Button danger onClick={props.onClose}>Cancel</Button>
         <Button confirm data-testid="save" onClick={save}>Save</Button>
       </section>
