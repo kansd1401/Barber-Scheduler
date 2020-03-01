@@ -147,13 +147,3 @@ func Router(db *gorm.DB) {
 	//router starting
 	router.Run(":8000")
 }
-
-func createAppointments(user schema.Users, barber schema.Barbers, slot int, date, note string) schema.Appointments {
-	return schema.Appointments{
-		User:   user,
-		Barber: barber,
-		Slot:   slot,
-		Date:   date,
-		Note:   note,
-	}
-}
