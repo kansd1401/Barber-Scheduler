@@ -33,6 +33,7 @@
 
 .box{
   align-items: center;
-  // width: 33%;
-  display: table-column-group;
+  min-width: 200px;
+  max-width: 600px;
+  width: 33%;
 }
