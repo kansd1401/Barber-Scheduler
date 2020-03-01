@@ -2,15 +2,18 @@
 @import "../styles/variables.scss";
 
 .day-list {
+  display: flex;
   &__item {
+    width: 18%;
     @include fade;
 
     color: #8395a7;
-    height: 5rem;
-    // width: 5rem;
+    min-height: 5rem;
+    min-width: 5rem;
     padding: 1rem;
-     flex-direction: column;
+    flex-direction: column;
     justify-content: center;
+    font-size: x-large;
 
     &:hover {
       background-color: #ee5253;

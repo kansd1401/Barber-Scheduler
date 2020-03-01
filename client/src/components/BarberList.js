@@ -7,7 +7,6 @@ export default function BarberList(props) {
   return (
     <ul>
       <section className="barbers">
-        <h4 className="barbers__header text--light">Barbers</h4>
         <ul className="barbers__list">
           {props.barbers.map((person) => <BarberListItem
             firstName={person.FirstName}
