@@ -29,9 +29,9 @@ $appointment-height: 9rem;
   }
 
   &__separator {
-    margin: 2px;
+    margin: 4px;
     border: 0;
-    border-bottom: 1px solid darken($white, 5%);
+    // border-bottom: 1px solid darken($white, 5%);
     width: 100%;
   }
 

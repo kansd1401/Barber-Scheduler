@@ -5,12 +5,11 @@ var classNames = require('classnames');
 
 
 export default function BarberListItem(props) {
-  const classes = classNames("barbers__item");
 
   return (
     <div className="box">
-      <div >
-        <ul className={classes}>
+      <div className={"barbers__box"}>
+        <ul className={"barbers__item"} >
           <img
             className={"barbers__item-image"}
             src={props.avatar}

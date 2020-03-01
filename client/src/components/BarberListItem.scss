@@ -2,26 +2,22 @@
 @import "../styles/variables.scss";
 
 .barbers {
+  &__box{
+    min-height: 50px;
+     height: 8rem;
+  }
   &__item {
-    // @include button-inactive--opacity;
-
-    margin-right: 0.5rem;
-    // color: $dark-background;
-    // background-color: $white;
-    // border-radius: 16px;
-    // height: 32px;
+    min-height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 2px;
-    padding-right: 1rem;
     font-size: larger;
-    // max-width: 300px;
+   
     
     &-image {
       border-radius: 30px;
-      width: 50px;
-      height: 50px;
+      min-width: 60px;
+      min-height: 60px;
       margin-right: 1rem;
     }
 
@@ -32,10 +28,11 @@
 }
 
 .box{
-  border-right: 1px solid darken($white, 5%);
-  margin-right: 2px;
+  // border-right: 1px solid darken($white, 5%);
+  border: 1px solid darken($white, 5%);
+  padding: 2px;
   align-items: center;
   min-width: 200px;
   max-width: 600px;
-  width: 30%;
+  width: 100%;
 }
