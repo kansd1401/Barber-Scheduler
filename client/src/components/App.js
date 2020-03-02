@@ -62,7 +62,14 @@ function App() {
   },[day, add])
   return (
     <div className="App">
-      <DayList days={days} day={day} setDay={setDay}/>
+      <div className="head-container">
+      <img
+        className="sidebar--centered"
+        src="images/logo2.png"
+        alt="Interview Scheduler"
+      />
+        <DayList days={days} day={day} setDay={setDay}/>
+      </div>
       {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       {add && <Popup 
       onClose={() => setAdd(false)}
