@@ -4,6 +4,7 @@ import DayList from './DayList'
 import BarberList from './BarberList'
 import Popup from './Popup'
 import { func } from 'prop-types';
+import "./App.scss"
 
 const days = [];
 const times = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00"]
@@ -62,12 +63,12 @@ function App() {
   },[day, add])
   return (
     <div className="App">
-      <div className="head-container">
-      <img
-        className="sidebar--centered"
-        src="images/logo2.png"
-        alt="Interview Scheduler"
-      />
+      <div className="sidebar">
+        <img
+          className="sidebar--centered"
+          src="images/logo.png"
+          alt="Interview Scheduler"
+        />
         <DayList days={days} day={day} setDay={setDay}/>
       </div>
       {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
