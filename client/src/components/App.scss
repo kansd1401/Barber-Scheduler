@@ -1,9 +1,10 @@
 @import "../styles/variables.scss";
 
 .App{
-  background-color: gold;
+  // background-color: gold;
 }
 .sidebar {
+  padding-top: 5%;
   background-color: rgb(230, 230, 230);
   box-shadow: 0px 4px 8px rgba($dark-background, 0.5);
   display: flex;

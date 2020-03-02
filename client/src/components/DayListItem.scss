@@ -3,6 +3,8 @@
 
 .day-list {
   display: flex;
+  width: 50%;
+  align-self: center;
   &__item {
     width: 18%;
     @include fade;
