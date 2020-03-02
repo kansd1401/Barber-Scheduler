@@ -25,7 +25,7 @@ export default function Form(props) {
     .then(function (response) {
       axios({
         method: 'post',
-        url: 'http://localhost:8000/forms/new',
+        url: 'http://localhost:8000/appointments/new',
         data: {
           UserID: response.data.user.ID,
           BarberID: props.barber.ID, 

@@ -9,9 +9,9 @@ export default function Appointment(props){
   return (
     <article className="appointment">
       <Header />
-     {!props.name &&  <Empty onAdd={props.onAdd} />}
-      {props.name && <Show 
-      name={props.name}
+     {!props.firstName &&  <Empty onAdd={props.onAdd} />}
+      {props.firstName && <Show 
+      name={props.firstName+" "+props.lastName}
       notes={props.notes}
       onEdit={props.onEdit}
       onDelete={props.onDelete}  />}
