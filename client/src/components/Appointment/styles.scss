@@ -7,12 +7,13 @@ $appointment-height: 9rem;
 
 .appointment {
   &__add {
-    background-color: rgb(224, 224, 224);
+    background-color: $white;
     min-height: $appointment-height;
-    // padding: 2rem 0;
+    // margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 7px;
     // width: 100%;
 
     &-button {
@@ -36,6 +37,7 @@ $appointment-height: 9rem;
   }
 
   &__card {
+    border-radius: 7px;
     min-height: $appointment-height;
     padding: 1.2rem 1.5rem;
     display: flex;
