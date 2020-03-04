@@ -2,15 +2,14 @@
 @import "../styles/variables.scss";
 
 .day-list {
-  margin-top: 5%;
   display: flex;
   width: 100%;
   align-self: center;
   &__item {
     width: 18%;
     @include fade;
-    background-color:$white;
-    color: #8395a7;
+    background-color:$black;
+    color: $white;
     min-height: 9rem;
     min-width: 5rem;
     padding: 1rem;
@@ -25,11 +24,11 @@
     }
 
     &--selected {
-      background-color: $grey;
+      background-color: $white;
       color: $dark-background;
 
       &:hover {
-        background-color: $grey;
+        background-color: $white;
       }
     }
     h3{
