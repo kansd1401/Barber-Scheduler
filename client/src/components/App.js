@@ -72,17 +72,18 @@ function App() {
         <DayList days={days} day={day} setDay={setDay}/>
       </div>
       <div>
-        <div>
-          {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
-          {add && <Popup 
-          onClose={() => setAdd(false)}
-          barber={barber}
-          slot={slot}
-          times={times}
-          date={date}
-          />}
+        <div className="time__list">
+
         </div>
+        {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       </div>
+      {add && <Popup 
+      onClose={() => setAdd(false)}
+      barber={barber}
+      slot={slot}
+      times={times}
+      date={date}
+      />}
     </div>
   );
 }
