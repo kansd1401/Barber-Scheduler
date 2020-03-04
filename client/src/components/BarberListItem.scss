@@ -14,7 +14,9 @@
     justify-content: center;
     align-items: center;
     font-size: x-large;
-   
+   li{
+     font-weight: bold;
+   }
     
     &-image {
       border-radius: 30px;

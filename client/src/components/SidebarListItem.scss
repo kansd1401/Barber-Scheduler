@@ -1,0 +1,43 @@
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+  &__item {
+    width: 18%;
+    @include fade;
+    background-color:$white;
+    color: $black;
+    min-height: 9rem;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-large;
+
+    &:hover {
+      background-color: $grey;
+      cursor: pointer;
+      color: $dark-background;
+    }
+
+    &--selected {
+      background-color: #ee5253;
+      color: $dark-background;
+
+      &:hover {
+        background-color: #ee5253;
+      }
+    }
+    h3{
+      font-weight: bold;
+      align-self: center;
+      text-align:center;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
