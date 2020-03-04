@@ -3,6 +3,7 @@ import axios from 'axios';
 import DayList from './DayList'
 import BarberList from './BarberList'
 import Popup from './Popup'
+import TimeList from "./TimeList"
 import { func } from 'prop-types';
 import "./App.scss"
 
@@ -72,9 +73,7 @@ function App() {
         <DayList days={days} day={day} setDay={setDay}/>
       </div>
       <div>
-        <div className="time__list">
-
-        </div>
+        <TimeList times={times}/>
         {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       </div>
       {add && <Popup 
