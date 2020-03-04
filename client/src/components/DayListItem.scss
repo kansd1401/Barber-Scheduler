@@ -18,20 +18,21 @@
     font-size: x-large;
 
     &:hover {
-      background-color: #ee5253;
+      background-color: $grey;
       cursor: pointer;
       color: $dark-background;
     }
 
     &--selected {
-      background-color: $black;
-      color: $white;
+      background-color: #ee5253;
+      color: $dark-background;
 
       &:hover {
-        background-color: $grey;
+        background-color: #ee5253;
       }
     }
     h3{
+      font-weight: bold;
       align-self: center;
       text-align:center;
       padding-top: 0.4rem;
