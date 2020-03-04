@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <div className="sidebar">
         <img
-          className="sidebar--centered"
-          src="images/logo.png"
+          className="logo"
+          src="images/logo3.svg"
           alt="Interview Scheduler"
         />
       </div>

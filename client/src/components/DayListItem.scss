@@ -8,8 +8,8 @@
   &__item {
     width: 18%;
     @include fade;
-    background-color:$black;
-    color: $white;
+    background-color:$white;
+    color: $black;
     min-height: 9rem;
     min-width: 5rem;
     padding: 1rem;
@@ -24,14 +24,15 @@
     }
 
     &--selected {
-      background-color: $white;
-      color: $dark-background;
+      background-color: $black;
+      color: $white;
 
       &:hover {
-        background-color: $white;
+        background-color: $grey;
       }
     }
     h3{
+      align-self: center;
       text-align:center;
       padding-top: 0.4rem;
       padding-bottom: 0.4rem;
