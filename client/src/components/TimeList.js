@@ -1,13 +1,12 @@
 import React from "react";
-import TimeListItem from "./TimeListItem"
+import "./TimeList.scss"
 
 export default function TimeList(props) {
 
   return (
     <ul className="time-list">
-      {props.times.map((time) => <TimeListItem
-        time = {time}
-        />)}
+      <div className="spacer"></div>
+      {props.times.map((time) => <h4 className="time-list__slot">{time}</h4>)}
     </ul>
   );  
 }

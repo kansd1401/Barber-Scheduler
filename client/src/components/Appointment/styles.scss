@@ -6,15 +6,14 @@
 $appointment-height: 9rem;
 
 .appointment {
+  height: 9.1rem;
   &__add {
     background-color: $white;
     min-height: $appointment-height;
-    // margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 7px;
-    // width: 100%;
 
     &-button {
       @include button-inactive--opacity;

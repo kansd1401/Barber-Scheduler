@@ -4,6 +4,7 @@ import DayList from './DayList'
 import BarberList from './BarberList'
 import Popup from './Popup'
 import TimeList from "./TimeList"
+import "./Scheduler.scss"
 
 const days = [];
 const times = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00"]
@@ -60,16 +61,9 @@ export default function Scheduler(props) {
     })
   },[day, add])
   return (
-    <div className="App">
-      <div className="sidebar">
-        <img
-          className="sidebar--centered"
-          src="images/logo.png"
-          alt="Interview Scheduler"
-        />
-        <DayList days={days} day={day} setDay={setDay}/>
-      </div>
-      <div className="scheduler-container">
+    <div className="scheduler">
+      <DayList days={days} day={day} setDay={setDay}/>
+      <div className="scheduler__container">
         <TimeList times={times}/>
         {barbers && <BarberList barbers={barbers} onAdd={selectBarber}/>}
       </div>

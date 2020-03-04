@@ -2,9 +2,10 @@
 @import "../styles/variables.scss";
 
 .barbers {
+  width: 100%;
   &__box{
     min-height: 50px;
-     height: 8rem;
+    height: 8rem;
   }
   &__item {
     min-height: 50px;

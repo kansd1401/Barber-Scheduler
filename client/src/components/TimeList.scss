@@ -1,0 +1,14 @@
+@import "../styles/variables.scss";
+
+.spacer{
+  height: 8rem;
+}
+
+.time-list{
+  background-color: $grey;
+  padding-left: 5rem;
+  &__slot{
+    font-size: larger;
+    min-height: 9.15rem;
+  }
+}

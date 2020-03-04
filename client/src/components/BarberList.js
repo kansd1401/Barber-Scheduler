@@ -5,7 +5,6 @@ import BarberListItem from "./BarberListItem"
 export default function BarberList(props) {
 
   return (
-    <ul>
       <section className="barbers">
         <ul className="barbers__list">
           {props.barbers.map((person) => <BarberListItem
@@ -17,6 +16,5 @@ export default function BarberList(props) {
             onAdd ={props.onAdd} />)}
         </ul>
       </section>
-    </ul>
   );
 }

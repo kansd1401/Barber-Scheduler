@@ -1,0 +1,9 @@
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
+
+.scheduler{
+  &__container{
+    display: flex;
+    width: 100%;
+  }
+}

@@ -5,7 +5,14 @@ import "./App.scss"
 function App() {
   return (
     <div className="App">
-      <Scheduler/>
+      <div className="sidebar">
+        <img
+          className="sidebar--centered"
+          src="images/logo.png"
+          alt="Interview Scheduler"
+        />
+      </div>
+        <Scheduler/>
     </div>
   );
 }
