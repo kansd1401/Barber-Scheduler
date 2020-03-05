@@ -10,12 +10,21 @@
   flex-direction: column;
 
   &__info{
+    background-color: $white;
     height: 40%;
-    background-color: $grey;
     display: inline-flex;
-
+    border: 3px solid #1a5bb1;
+    margin: 1.5rem;
     &--box{
-      color:$blue
+      width: 34%;
+      padding: 3rem;
+      h1{
+        color: $blue;
+      }
+      h2{
+        margin-top: 1rem;
+        color: $black;
+      }
     }
   }
 }

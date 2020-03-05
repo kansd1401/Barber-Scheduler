@@ -9,15 +9,15 @@ export default function Contact(props) {
       <div className="contact__info">
         <div className="contact__info--box">
           <h1>ADDRESS:</h1>
-          <h3>1234 99th Ave Vancouver BC.</h3>
+          <h2>1234 99th Ave Vancouver BC.</h2>
         </div>
         <div className="contact__info--box">
-          <h1>TELEPHONE</h1>
-          <h3>204-010-0101</h3>
+          <h1>TELEPHONE:</h1>
+          <h2>204.010.0101</h2>
         </div>
         <div className="contact__info--box">
           <h1>EMAIL:</h1>
-          <h3>barbershop@hmail.com</h3>
+          <h2>barbershop@hmail.com</h2>
         </div>
       </div>
     </div>
