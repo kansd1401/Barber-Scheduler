@@ -20,10 +20,8 @@ function App() {
         <SidebarList setItem={setItem} item={item} items={items}/>
       </div>
         {item === items[0] && <Scheduler/>}
-      <div>
         {item === items[1] && <About/>}
         {item === items[2] && <Contact/>}
-      </div>
       {item !== items[0] && <div className="sidebar">
         <img
           className="logo"

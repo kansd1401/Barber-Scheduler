@@ -5,7 +5,7 @@ export default function About(props) {
 
   return (
     <div className="about">
-      <img src="/images/image3.jpg"/>
+      <img src="/images/image2.jpg"/>
 
       <div className="about__info">
         <div className="about__info--box">

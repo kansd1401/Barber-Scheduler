@@ -4,6 +4,7 @@
 .contact{
   min-height: 100%;
   display: flex;
+  width: 60%;
   flex-direction: column;
   &__info{
     background-color: $white;
