@@ -1,8 +1,11 @@
 @import "../styles/variables.scss";
-.App{
-  display: flex;
+html, body, #root{
   width: 100%;
-  height: 100%;
+  height: 100%
+}
+.App{
+  display: inline-flex;
+  width: 100%;
 }
 .sidebar {
   background-color: $black;
