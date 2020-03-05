@@ -43,10 +43,11 @@ html, body, #root{
   max-height: 10.5rem;
 }
 
-.scheduler     {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  // padding-left: 2rem;
-  width: 100%;
+.banner{
+  margin-top: 20rem;
+  align-self: center;
+  box-shadow: 0px 4px 8px rgba($dark-background, 0.5);
+  max-width: 15rem;
+  max-height: 22.7rem;
 }
+

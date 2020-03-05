@@ -22,12 +22,12 @@ function App() {
         {item === items[0] && <Scheduler/>}
         {item === items[1] && <About/>}
         {item === items[2] && <Contact/>}
-      {item !== items[0] && <div className="sidebar">
+      <div className="sidebar">
         <img
-          className="logo"
+          className="banner"
           src="images/info.png"
         />
-      </div>}
+      </div>
     </div>
   );
 }
