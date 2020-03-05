@@ -16,7 +16,7 @@ function App() {
         />
         <SidebarList setItem={setItem} item={item} items={["Book Appointment","About us", "Contact us"]}/>
       </div>
-        <Scheduler/>
+        {item === "Book Appointment" && <Scheduler/>}
     </div>
   );
 }
