@@ -24,11 +24,12 @@
     }
 
     &--selected {
-      background-color: #ee5253;
-      color: $dark-background;
+      background-color: $blue;
+      color: $white;
 
       &:hover {
-        background-color: #ee5253;
+        background-color: $blue;
+        color: $white;
       }
     }
     h3{
