@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
 import Scheduler from "./Scheduler"
 import SidebarList from "./SidebarList"
+import Contact from "./Contact"
 import "./App.scss"
+
+const items = ["Book Appointment","About Us", "Contact Us"]
 
 function App() {
   const [item, setItem] = useState("Book Appointment")
@@ -14,9 +17,11 @@ function App() {
           src="images/logo3.svg"
           alt="Interview Scheduler"
         />
-        <SidebarList setItem={setItem} item={item} items={["Book Appointment","About us", "Contact us"]}/>
+        <SidebarList setItem={setItem} item={item} items={items}/>
       </div>
-        {item === "Book Appointment" && <Scheduler/>}
+        {item === items[0] && <Scheduler/>}
+        {item === items[2] && <Contact/>}
+        
     </div>
   );
 }
