@@ -8,7 +8,7 @@ import "./App.scss"
 const items = ["BOOK NOW","ABOUT", "CONTACT"]
 
 function App() {
-  const [item, setItem] = useState(items[2])
+  const [item, setItem] = useState(items[0])
 
   return (
     <div className="App">

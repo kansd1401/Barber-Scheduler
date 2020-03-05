@@ -1,6 +1,5 @@
 import React,{useState} from 'react'; 
 import axios from 'axios';
-import BarberListItem from "./BarberListItem";
 import Button from "./Button";
 
 
@@ -50,10 +49,19 @@ export default function Form(props) {
     <main className="form__card form__card--create" >
     <section className="form__card-left">
       <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-        <BarberListItem firstName={props.barber.FirstName}
-          lastName={props.barber.LastName}
-          avatar={props.barber.Image}
-          id={props.barber.ID}/>
+          <div>
+            <ul className={"barber__item"} >
+            <img
+              className={"barber__item-image"}
+              src={props.barber.Image}
+              alt={props.barber.FirstName}
+            />
+            <div>
+            <li>{props.barber.FirstName}</li>
+            <li>{props.barber.LastName}</li>
+            </div>
+        </ul>
+          </div>
         <h2 className="text--regular">{props.times[props.slot-1]} pm</h2>
         <h2 className="text--regular">{props.date}</h2>
         <div>
