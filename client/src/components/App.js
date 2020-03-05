@@ -4,10 +4,10 @@ import SidebarList from "./SidebarList"
 import Contact from "./Contact"
 import "./App.scss"
 
-const items = ["Book Appointment","About Us", "Contact Us"]
+const items = ["Book Now","About Us", "Contact Us"]
 
 function App() {
-  const [item, setItem] = useState("Book Appointment")
+  const [item, setItem] = useState(items[1])
 
   return (
     <div className="App">
