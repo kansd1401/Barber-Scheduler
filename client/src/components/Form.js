@@ -57,13 +57,16 @@ export default function Form(props) {
               alt={props.barber.FirstName}
             />
             <div>
-            <li>{props.barber.FirstName}</li>
-            <li>{props.barber.LastName}</li>
+              <li>{props.barber.FirstName}</li>
+              <li>{props.barber.LastName}</li>
+            </div>
+            <div>
+              <li>{props.times[props.slot-1]} pm</li>
+              <li>{props.date}</li>
             </div>
         </ul>
           </div>
-        <h2 className="text--regular">{props.times[props.slot-1]} pm</h2>
-        <h2 className="text--regular">{props.date}</h2>
+       
         <div>
           <input 
             className="form__create-input text--semi-bold"
