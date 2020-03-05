@@ -1,3 +1,7 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+@import "../styles/animations.scss";
+
 .popup {  
   position: fixed;  
   width: 100%;  
@@ -10,10 +14,11 @@
   background-color: rgba(0,0,0, 0.5);  
 }  
 .popup_inner {  
-  position: absolute;  
+  background-color: $blue;
+  position: absolute;
+  padding: 2rem;
   left: 25%;  
   right: 25%;  
   top: 25%;  
   bottom: 25%;  
-  margin: auto;  
 }
