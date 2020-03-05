@@ -61,6 +61,10 @@ export default function Form(props) {
               <li>{props.barber.LastName}</li>
             </div>
             <div>
+              <li>Time:</li>
+              <li>Date:</li>
+            </div>
+            <div>
               <li>{props.times[props.slot-1]} pm</li>
               <li>{props.date}</li>
             </div>
