@@ -5,21 +5,17 @@ export default function About(props) {
 
   return (
     <div className="about">
-      <div>
-        
-      </div>
+      <img src="/images/image2.jpg"/>
+
       <div className="about__info">
         <div className="about__info--box">
-          <h1>ADDRESS:</h1>
-          <h2>1234 99th Ave Vancouver BC.</h2>
+          <h1>VIBE</h1>
         </div>
         <div className="about__info--box">
-          <h1>TELEPHONE:</h1>
-          <h2>204.010.0101</h2>
+          <h2>With an old school flavor and a new school twist, Fort Worth Barber Shop specializes in classic cuts, beard trims, hot towel shaves and quality mens watch grooming products. Licensed professional barbers, a carefully curated music playlist and a chill place to kick back make for a one-of-a kind experience.</h2>
         </div>
         <div className="about__info--box">
-          <h1>EMAIL:</h1>
-          <h2>barbershop@hmail.com</h2>
+          <button className="btn">BOOK NOW</button>
         </div>
       </div>
     </div>
