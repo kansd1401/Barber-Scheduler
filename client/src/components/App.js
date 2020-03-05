@@ -2,9 +2,10 @@ import React,{useState} from 'react';
 import Scheduler from "./Scheduler"
 import SidebarList from "./SidebarList"
 import Contact from "./Contact"
+import About from "./About"
 import "./App.scss"
 
-const items = ["Book Now","About Us", "Contact Us"]
+const items = ["BOOK NOW","ABOUT", "CONTACT"]
 
 function App() {
   const [item, setItem] = useState(items[1])
@@ -20,8 +21,8 @@ function App() {
         <SidebarList setItem={setItem} item={item} items={items}/>
       </div>
         {item === items[0] && <Scheduler/>}
+        {item === items[1] && <About/>}
         {item === items[2] && <Contact/>}
-        
     </div>
   );
 }
