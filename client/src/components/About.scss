@@ -4,7 +4,6 @@
 .about{
   min-height: 100%;
   display: flex;
-  width: 100%;
   flex-direction: column;
   &__info{
     padding: 5rem;
@@ -14,7 +13,7 @@
     &--box{
       align-self: center;
       padding: 5rem;
-      width: 100%;
+      // width: 100%;
       justify-content: center;
       text-align: center;
       border-bottom: 3px solid $black;

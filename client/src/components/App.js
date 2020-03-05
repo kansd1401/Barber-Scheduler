@@ -16,13 +16,20 @@ function App() {
         <img
           className="logo"
           src="images/logo3.svg"
-          alt="Interview Scheduler"
         />
         <SidebarList setItem={setItem} item={item} items={items}/>
       </div>
         {item === items[0] && <Scheduler/>}
+      <div>
         {item === items[1] && <About/>}
         {item === items[2] && <Contact/>}
+      </div>
+      {item !== items[0] && <div className="sidebar">
+        <img
+          className="logo"
+          src="images/info.png"
+        />
+      </div>}
     </div>
   );
 }
