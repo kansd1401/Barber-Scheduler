@@ -8,7 +8,7 @@ import "./App.scss"
 const items = ["BOOK NOW","ABOUT", "CONTACT"]
 
 function App() {
-  const [item, setItem] = useState(items[1])
+  const [item, setItem] = useState(items[2])
 
   return (
     <div className="App">
@@ -20,7 +20,7 @@ function App() {
         <SidebarList setItem={setItem} item={item} items={items}/>
       </div>
         {item === items[0] && <Scheduler/>}
-        {item === items[1] && <About/>}
+        {item === items[1] && <About onBook={() => setItem(items[0])}/>}
         {item === items[2] && <Contact/>}
       <div className="sidebar">
         <img
