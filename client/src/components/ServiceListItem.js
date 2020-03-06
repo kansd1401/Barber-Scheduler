@@ -10,7 +10,7 @@ export default function ServiceListItem(props) {
 
   return (
     <th onClick={props.setService} className={classes}>
-      <h3 className="text--regular">{props.name}</h3> 
+      <strong className="service-list__text">{props.name}</strong> 
     </th>
   );
 }
