@@ -1,13 +1,14 @@
 import React,{useState} from 'react'; 
 import axios from 'axios';
 import Button from "./Button";
+import ServiceList from "./ServiceList"
 
 
 export default function Form(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [note, setNote] = useState("");
+  const [service, setService] = useState("");
   const [error, setError] = useState("");
 
 
@@ -30,7 +31,7 @@ export default function Form(props) {
           BarberID: props.barber.ID, 
           Slot: props.slot, 
           Date: props.date, 
-          Note: note
+          Note: service
         }
       })
       .then(function (res) {
@@ -99,14 +100,7 @@ export default function Form(props) {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
-        <input 
-          className="form__create-input text--semi-bold"
-          name="email"
-          type="text"
-          placeholder="Notes for the appointment"
-          value={note}
-          onChange={(event) => setNote(event.target.value)}
-        />
+        <ServiceList services={props.services} service={service} setService={setService}/>
         <section className="form__validation">{error}</section>
       </form>
     </section>

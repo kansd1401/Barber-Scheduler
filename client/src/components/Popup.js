@@ -18,7 +18,8 @@ export default function Popup (props) {
           barber={props.barber}
           slot={props.slot}
           times={props.times}
-          date={props.date}/>
+          date={props.date}
+          services={props.services}/>
       </div>  
     </div>  
   );  
