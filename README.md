@@ -4,7 +4,7 @@ Barber Scheduler is a simple Barbershop website made with react where the owner 
 
 TechStack: GoLang, React.js, Gin, Gorm, Axios, PSQL
 
-#Final Product
+# Final Product
 
 ![Scheduler](https://github.com/kansd1401/Barber-Scheduler/blob/master/screenshots/01.png)
 
@@ -13,3 +13,13 @@ TechStack: GoLang, React.js, Gin, Gorm, Axios, PSQL
 ![Contact](https://github.com/kansd1401/Barber-Scheduler/blob/master/screenshots/03.png)
 
 ![About](https://github.com/kansd1401/Barber-Scheduler/blob/master/screenshots/04.png)
+
+# Getting-Started
+
+  ## API
+
+    1. First setup Golang on your computer
+
+      --- sh
+      https://golang.org/doc/install
+      ---
