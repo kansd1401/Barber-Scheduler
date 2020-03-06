@@ -13,37 +13,41 @@ export default function Form(props) {
 
 
   function save(){
-    axios({
-      method: 'post',
-      url: 'http://localhost:8000/users/new',
-      data: {
-        firstName: firstName,
-        lastName: lastName,
-        email: email
-      }
-    })
-    .then(function (response) {
+    if(firstName.length && lastName.length && email.length && service.length){
       axios({
         method: 'post',
-        url: 'http://localhost:8000/appointments/new',
+        url: 'http://localhost:8000/users/new',
         data: {
-          UserID: response.data.user.ID,
-          BarberID: props.barber.ID, 
-          Slot: props.slot, 
-          Date: props.date, 
-          Note: service
+          firstName: firstName,
+          lastName: lastName,
+          email: email
         }
       })
-      .then(function (res) {
-        props.onClose();
+      .then(function (response) {
+        axios({
+          method: 'post',
+          url: 'http://localhost:8000/appointments/new',
+          data: {
+            UserID: response.data.user.ID,
+            BarberID: props.barber.ID, 
+            Slot: props.slot, 
+            Date: props.date, 
+            Note: service
+          }
+        })
+        .then(function (res) {
+          props.onClose();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
       })
       .catch(function (err) {
         console.log(err);
       });
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+    } else {
+      setError("Please fill all the details and select a service.")
+    }
   }
 
   return (
@@ -71,7 +75,7 @@ export default function Form(props) {
             </div>
         </ul>
           </div>
-       
+          <section className="form__validation">{error}</section>
         <div className="barber__name">
           <input 
             className="form__create-input text--semi-bold"
@@ -101,7 +105,6 @@ export default function Form(props) {
           />
         </div>
         <ServiceList services={props.services} service={service} setService={setService}/>
-        <section className="form__validation">{error}</section>
       </form>
     </section>
     <section className="form__card-right">
