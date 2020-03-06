@@ -112,9 +112,9 @@ $appointment-height: 9rem;
   }
 
   &__create-input {
-    background-color: $dark-background;
+    background-color: $black;
     border: 0;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid $white;
     color: $white;
     font-size: 1.5rem;
     height: 2rem;
@@ -158,6 +158,16 @@ $appointment-height: 9rem;
     min-height: 50px;
     height: 8rem;
   }
+
+  &__name{
+    display:flex;
+    flex-direction: row;
+    
+    input{
+      margin: 1rem;
+    }
+  }
+
   &__item {
     margin-bottom: 2rem;
     min-height: 50px;
@@ -173,6 +183,8 @@ $appointment-height: 9rem;
       margin-right: 2rem;
       color: $grey;
     }
+
+    
     
     &-image {
       border-radius: 30px;

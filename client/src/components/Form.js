@@ -71,7 +71,7 @@ export default function Form(props) {
         </ul>
           </div>
        
-        <div>
+        <div className="barber__name">
           <input 
             className="form__create-input text--semi-bold"
             name="firstName"
@@ -89,14 +89,16 @@ export default function Form(props) {
             onChange={(event) => setLastName(event.target.value)}
           />
         </div>
+        <div className="barber__name">
         <input 
-          className="form__create-input text--semi-bold"
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
+            className="form__create-input text--semi-bold"
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
         <input 
           className="form__create-input text--semi-bold"
           name="email"
