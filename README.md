@@ -16,10 +16,11 @@ TechStack: GoLang, React.js, Gin, Gorm, Axios, PSQL
 
 # Getting-Started
 
-  ## API
+## API
 
-    1. First setup Golang on your computer
+  1. First setup Golang on your computer
+    --- sh
+    https://golang.org/doc/install
+    ---
 
-      --- sh
-      https://golang.org/doc/install
-      ---
+  2.
