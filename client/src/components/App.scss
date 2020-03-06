@@ -1,7 +1,9 @@
 @import "../styles/variables.scss";
 html, body, #root{
   width: 100%;
-  height: 100%
+  height: 100%;
+  font-family: 'Oswald', sans-serif;
+  // font-family: 'Lemonada', cursive;
 }
 .App{
   display: inline-flex;
