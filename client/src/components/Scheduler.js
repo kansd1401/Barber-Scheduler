@@ -8,7 +8,7 @@ import "./Scheduler.scss"
 
 const days = [];
 const times = ["12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00"]
-const services = ["CUT","SHAVE","BEARD TRIM", "CUT + SHAVE", "CUT + BEARD TRIM"]
+const services = ["CUT","SHAVE","BEARD TRIM", "CUT + SHAVE", "CUT + TRIM"]
 
 function daysData(day){
   var weekDays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];

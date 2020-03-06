@@ -31,11 +31,11 @@ $appointment-height: 9rem;
   &__separator {
     margin: 4px;
     border: 0;
-    // border-bottom: 1px solid darken($white, 5%);
     width: 100%;
   }
 
   &__card {
+    font-family: 'Lemonada', cursive;
     border-radius: 7px;
     min-height: $appointment-height;
     padding: 1.2rem 1.5rem;
@@ -43,7 +43,6 @@ $appointment-height: 9rem;
     justify-content: space-between;
     flex-flow: row wrap;
     color: $white;
-    // width: 200px;
 
     &-left {
       display: flex;

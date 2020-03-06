@@ -7,7 +7,11 @@
   width: 60%;
   flex-direction: column;
   &__info{
-    padding: 5rem;
+    height: 100%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
     background-color: $grey;
@@ -24,8 +28,10 @@
       }
       h2{
         margin-top: 1rem;
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: $black;
+        font-family: 'Lemonada', cursive;
+
       }
     }
     
