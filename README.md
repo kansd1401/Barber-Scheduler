@@ -14,26 +14,44 @@ TechStack: GoLang, React.js, Gin, Gorm, Axios, PSQL
 
 ![About](https://github.com/kansd1401/Barber-Scheduler/blob/master/screenshots/04.png)
 
-# Getting-Started
-
-## API
-
-  1. First setup Golang on your computer
-    --- sh
-    https://golang.org/doc/install
-    ---
-
-  2.
-
 ### Getting Started
 
- 1. We use submodules in the git repo; use this command to update submodules:
+ 1. First setup Golang on your computer:
     ~~~ sh
-    git submodule update --init --recursive
+    https://golang.org/doc/install
     ~~~
 
- 2. Download bundler to install dependencies
-
+ 2. Install dependencies
     ~~~ sh
-    $ gem install bundler
+    $ go get -u github.com/gin-gonic/gin
+    $ go get github.com/gin-contrib/cors
+    $ go get -u github.com/jinzhu/gorm
+    ~~~
+
+  3. Create psql database:
+    ~~~ sh
+    host     = "localhost"
+    user     = "manager"
+    password = "password"
+    dbname   = "scheduler"
+    ~~~
+
+  4. Cd to backend and reset the db:
+    ~~~ sh
+    $ go run db/db:reset.go 
+    ~~~
+
+  5. Run api:
+    ~~~ sh
+    $ go run main.go 
+    ~~~
+
+  6. On a new tab cd to Barber-scheduler/client and install dependencies:
+    ~~~ sh
+    $ npm i
+    ~~~
+
+  7. Run react app:
+    ~~~ sh
+    $ npm run
     ~~~
