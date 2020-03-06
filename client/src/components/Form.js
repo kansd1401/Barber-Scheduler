@@ -106,11 +106,9 @@ export default function Form(props) {
         </div>
         <ServiceList services={props.services} service={service} setService={setService}/>
       </form>
-    </section>
-    <section className="form__card-right">
       <section className="form__actions">
+        <Button confirm onClick={save}>Save</Button>
         <Button danger onClick={props.onClose}>Cancel</Button>
-        <Button confirm data-testid="save" onClick={save}>Save</Button>
       </section>
     </section>
   </main>

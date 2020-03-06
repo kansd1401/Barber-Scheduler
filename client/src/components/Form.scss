@@ -90,10 +90,15 @@ $appointment-height: 9rem;
 
   &__actions {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    button{
+      margin:1rem;
+    }
 
     &-button {
       @include button-inactive--opacity;
-      margin-right: 0.5rem;
+      margin-left: 0.5rem;
       display: none;
       color: $black;
 
