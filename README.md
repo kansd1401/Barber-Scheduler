@@ -24,3 +24,16 @@ TechStack: GoLang, React.js, Gin, Gorm, Axios, PSQL
     ---
 
   2.
+
+### Getting Started
+
+ 1. We use submodules in the git repo; use this command to update submodules:
+    ~~~ sh
+    git submodule update --init --recursive
+    ~~~
+
+ 2. Download bundler to install dependencies
+
+    ~~~ sh
+    $ gem install bundler
+    ~~~
